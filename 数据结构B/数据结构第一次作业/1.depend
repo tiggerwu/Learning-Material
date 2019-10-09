@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1554474582 source:c:\users\wyq\desktop\数据结构b 第一题\main.cpp
+	<cmath>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<cstring>
+

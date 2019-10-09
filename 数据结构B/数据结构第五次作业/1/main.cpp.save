@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+class tree
+{
+    private:
+        struct node {
+            int data;
+            node *left,*right;
+            }; 
+        node *root;
+        
+    public:
+        tree();
+        ~tree();
+        int *find(const int &x,node *&t)const
+        {
+          if(t==NULL)
+              cout<<-1<<endl;
+          else if(t->data==x)
+              
+        };
+        void insert(const int&x,node*&t)
+        {
+            
+        };
+}
+
+
+void insert(int head, int tmp,int height) {   //构造搜索树
+	if (head != -1) {
+		int r = tmp < head ? tree[head].left : tree[head].right;
+		if (r != -1)
+			insert(r, tmp,height+1);
+		else {
+			(tmp < head ? tree[head].left : tree[head].right) = tmp;
+			tree[tmp].parent = head;        //记录父结点
+			tree[tmp].height = height;      //存储结点深度
+		}
+	}
+}
+
+void find(int x,Node *t)
+{
+    if()
+}
+
+int main()
+{
+    
+    return 0;
+}

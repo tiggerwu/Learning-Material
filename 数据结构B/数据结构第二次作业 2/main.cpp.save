@@ -1,0 +1,95 @@
+#include <cmath>
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <stack>
+
+using namespace std;
+
+stack<char> tmp;
+
+int pri(char ch)
+{
+    int res;
+
+    switch(ch)
+    {
+        case '+':res = 1;break;
+        case '-':res = 1;break;
+        case '*':res = 2;break;
+        case '/':res = 2;break;
+    }
+
+    return res;
+}
+
+int main()
+{
+
+    string s;
+    char ch[100],temp;
+
+    getline(cin,s);
+    strcpy(ch,s.c_str());
+    int len = s.length();
+    //cout<<len;
+    bool flag=0;
+
+    for(int i=0;i<len;i++)
+    {
+        cout<<tmp.empty();
+        if(ch[i]>='0'&&ch[i]<='9') cout<<ch[i];
+
+        else if(ch[i]=='('||ch[i]==')')
+        {
+            if(ch[i]=='(')
+               tmp.push(ch[i]);
+            else
+            {
+                while(tmp.top()!='(')
+                      {
+                          temp = tmp.top();
+                          tmp.pop();
+                          cout<<temp;
+                      }
+                temp = tmp.top();
+                tmp.pop();
+                cout<<temp;
+            }
+        }
+        else
+        {
+            while(true)
+            {
+                //cout<<tmp.top();
+                if(tmp.top()=='('||tmp.empty())
+                {
+                    tmp.push(ch[i]);
+
+                    break;
+                }
+                else if(pri(tmp.top())<pri(ch[i]))
+                {
+                    tmp.push(ch[i]);
+                    break;
+                }
+                else
+                {
+                    temp = tmp.top();
+                    tmp.pop();
+                    cout<<temp;
+                    break;
+                }
+
+            }
+        }
+    }
+
+    if(!tmp.empty())
+    {
+        temp = tmp.top();
+        tmp.pop();
+        cout<<temp;
+    }
+}

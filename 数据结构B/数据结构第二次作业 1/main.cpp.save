@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+template<class elemType>
+class seqStack:public stack<elemType>
+{
+    private:
+        elemTpye *elem;
+        int top;
+        int maxsize;
+        
+    public:
+        seqStack(int initsize = 100)
+        {
+            elem = new elemType[initsize];
+            maxsize = initsize;
+            top = -1;
+        }
+        ~seqStack()
+        {
+            delete []elem;
+        }
+        elemType pop()
+        {
+            
+        }
+        void push(const elemType &x)
+        {
+            
+        }
+}
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}

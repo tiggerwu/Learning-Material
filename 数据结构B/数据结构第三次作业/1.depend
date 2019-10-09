@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1556032747 source:c:\users\wyq\desktop\1\main.cpp
+	<iostream>
+	<string>
+	<cstring>
+	<cmath>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+

@@ -1,0 +1,72 @@
+#include <iostream>
+
+using namespace std;
+
+int count[50]={0};
+
+class closeHashTable
+{
+    private:
+        struct node
+        {
+            int data;
+            int state;
+            
+            node(){state=0;}    
+        };
+        
+        node *array;
+        int size;
+        
+    public:
+        closeHashTable(int length=101)
+        {
+            size=length;
+            array=new node[size];
+            for(int i=0;i<size;i++)
+            {
+                array[i].data=-1;
+            }
+        }
+        void insert(const int &x,const int &p)
+        {
+            int count=0;
+            int initPos,pos;
+            
+            initPos=pos=x%p;
+            do
+            {
+                if(array[pos]!=1)
+                {
+                    array[pos].data=x;
+                    array[pos].state=1;
+                    count++;
+                    count[pos]=count;
+                    return;
+                }
+                count++;
+                pos=(pos+1)%size;
+            }while(pos!=initPos);
+        }
+};
+
+
+int main()
+{
+    closeHashTable table;
+    int p,m,n;
+    cin>>p>>m>>n;
+    int tmp;
+    for(int i=0;i<n;i++)
+    {
+        cin>>tmp;
+        table.insert(tmp,p);
+    }
+    for(int i=0;i<m;i++)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    for
+    return 0;
+}
