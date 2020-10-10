@@ -1,0 +1,8 @@
+本程序基于SeqGAN原程序，结合本任务自身特点修改得来。
+程序要求Python3.6，Keras版本为2.2.4，tensorflow为1.12.0。
+模型已经保存下来，存放在/data/save文件夹中。包括预训练和训练得到的weights。
+运行main.py即可调用模型进行文本生成，结果存放在/data/save文件夹中的test.txt中。（generate_sentences.txt为训练过程中生成的句子。）
+config.ini为配置文件，在里面可以修改模型存储路径、batch大小、预训练轮数等。
+/data文件夹中train.txt文件为训练样本。
+SeqGAN文件夹中为SeqGAN的实现例程。具体细节请参见代码中的注释。
+
